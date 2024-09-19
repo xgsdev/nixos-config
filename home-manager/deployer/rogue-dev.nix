@@ -45,6 +45,7 @@
     sessionPath = ["$HOME/.local/bin"];
     sessionVariables = {
       FLAKE = "$HOME/nixos-config";
+      PRIVATE_RUN = "yes";
     };
   };
 
@@ -66,10 +67,11 @@
 
   programs.bash = {
     enable = true;
+    enableCompletion = true;
 
     initExtra = ''
       # include .profile if it exists
-      [[ -f ~/.profile ]] && . ~/.profile
+      [[ $PRIVATE_RUN != yes && -f ~/.profile ]] && source ~/.profile
     '';
   };
 
