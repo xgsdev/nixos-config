@@ -64,6 +64,15 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
+  programs.bash = {
+    enable = true;
+
+    initExtra = ''
+      # include .profile if it exists
+      [[ -f ~/.profile ]] && . ~/.profile
+    '';
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
