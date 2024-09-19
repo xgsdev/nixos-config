@@ -13,7 +13,7 @@
       # ./mods/podman.nix
       ./mods/systemd-initrd.nix
       # ./mods/tailscale.nix
-    ]
+    ];
 
   home-manager = {
     useGlobalPkgs = true;
