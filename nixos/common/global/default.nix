@@ -6,12 +6,13 @@
       inputs.home-manager.nixosModules.home-manager
       # ./acme.nix
       # ./auto-upgrade.nix
-      ./locale.nix
-      ./nix.nix
-      ./openssh.nix
-      # ./podman.nix
-      ./systemd-initrd.nix
-      # ./tailscale.nix
+      ./mods/locale.nix
+      ./mods/base-cli.nix
+      ./mods/nix.nix
+      ./mods/openssh.nix
+      # ./mods/podman.nix
+      ./mods/systemd-initrd.nix
+      # ./mods/tailscale.nix
     ]
 
   home-manager = {

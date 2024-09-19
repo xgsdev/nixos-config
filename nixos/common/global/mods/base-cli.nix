@@ -1,0 +1,45 @@
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    wget
+    git
+    htop
+    ripgrep
+    bat
+    eza
+    curl
+    jq
+    nano
+    less
+    renameutils
+    p7zip
+    rsync
+    srm
+    nmap
+    traceroute
+    unzip
+    tmux
+    ncdu
+    tig
+    dos2unix
+    tree
+    rename
+    aria2
+    fzf
+    fd
+    stow
+    acl
+    moreutils
+    pinentry
+    pinentry-curses
+    zip
+    killall
+    ncurses
+    perl
+    zoxide
+    sysz
+    whois
+    mosh
+    just
+  ];
+}
