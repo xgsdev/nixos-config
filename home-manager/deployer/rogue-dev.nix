@@ -52,14 +52,6 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/root/nixflake/nixos-config";
-  };
-
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
