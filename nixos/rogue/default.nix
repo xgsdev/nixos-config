@@ -54,7 +54,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/root/nixflake/nixos-config";
+    flake = "/home/deployer/nixos-config";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
