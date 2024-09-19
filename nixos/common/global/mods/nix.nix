@@ -35,13 +35,13 @@ in {
     # Opinionated: disable channels
     channel.enable = false;
 
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      # Keep the last 3 generations
-      options = "--delete-older-than +3";
-      # options = "--delete-older-than 30d";
-    };
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   # Keep the last 3 generations
+    #   options = "--delete-older-than +3";
+    #   # options = "--delete-older-than 30d";
+    # };
 
     # Add each flake input as a registry and nix_path
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
