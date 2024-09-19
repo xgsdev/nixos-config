@@ -42,6 +42,10 @@
   home = {
     username = "deployer";
     homeDirectory = "/home/deployer";
+    sessionPath = ["$HOME/.local/bin"];
+    sessionVariables = {
+      FLAKE = "$HOME/nixos-config";
+    };
   };
 
   # Add stuff for your user as you see fit:
