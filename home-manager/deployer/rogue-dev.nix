@@ -48,6 +48,13 @@
     };
   };
 
+   home.packages = with pkgs; [
+    nvd # Differ
+    nix-diff # Differ, more detailed
+    nix-output-monitor
+    nh # Nice wrapper for NixOS and HM
+  ];
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
