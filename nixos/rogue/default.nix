@@ -15,6 +15,7 @@
     ./networking.nix
     ../common/global
     ../common/users/deployer
+    ../common/users/www-data
   ];
 
   nixpkgs = {
