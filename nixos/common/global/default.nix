@@ -12,6 +12,8 @@
       ./mods/openssh.nix
       ./mods/firewall.nix
       ./mods/fail2ban.nix
+      ./mods/acme.nix
+      ./mods/nginx.nix
       # ./mods/podman.nix
       ./mods/systemd-initrd.nix
       # ./mods/tailscale.nix

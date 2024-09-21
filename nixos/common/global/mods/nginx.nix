@@ -16,7 +16,7 @@ in {
           serverName = "codefun.fyi";
           forceSSL = true;
           enableACME = true;
-          root = "/var/www/codefun.fyi/html";
+          root = "/srv/www/codefun.fyi/html";
 
           locations."/.well-known/acme-challenge" = {
             root = "/var/lib/acme/acme-challenge";
@@ -43,7 +43,7 @@ in {
           serverName = "blog.codefun.fyi";
           forceSSL = true;
           useACMEHost = "codefun.fyi";
-          root = "/var/www/codefun.fyi/blog";
+          root = "/srv/www/codefun.fyi/blog";
 
           locations."/.well-known/acme-challenge" = {
             root = "/var/lib/acme/acme-challenge";
