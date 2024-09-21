@@ -10,6 +10,8 @@
       ./mods/base-cli.nix
       ./mods/nix.nix
       ./mods/openssh.nix
+      ./mods/firewall.nix
+      ./mods/fail2ban.nix
       # ./mods/podman.nix
       ./mods/systemd-initrd.nix
       # ./mods/tailscale.nix
