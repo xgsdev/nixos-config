@@ -23,6 +23,22 @@ in {
           };
         };
 
+        "www.codefun.fyi" = {
+          serverName = "www.codefun.fyi";
+          forceSSL = true;
+          useACMEHost = "codefun.fyi";
+
+          locations = {
+            "/.well-known/acme-challenge" = {
+              root = "/var/lib/acme/acme-challenge";
+            };
+
+            "/" = {
+              return = "301 https://codefun.fyi$request_uri";
+            };
+          };
+        };
+
         blog = {
           serverName = "blog.codefun.fyi";
           forceSSL = true;
