@@ -12,7 +12,7 @@
   
     certs = {
       "codefun.fyi" = {
-        extraDomainNames = [ "www.codefun.fyi" "blog.codefun.fyi" ];
+        extraDomainNames = [ "www.codefun.fyi" "blog.codefun.fyi" "*.codefun.fyi" ];
         dnsProvider = "cloudflare";
         credentialsFile = "/home/deployer/cf/cloudf";
         webroot = null;
