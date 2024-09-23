@@ -12,6 +12,18 @@ in {
 
       virtualHosts = {
 
+        "_" = {
+          serverName = "_";
+          default = true;
+          forceSSL = true;
+          useACMEHost = "codefun.fyi";
+          root = "/srv/www/codefun.fyi/default";
+
+          locations."/.well-known/acme-challenge" = {
+            root = "/var/lib/acme/acme-challenge";
+          };
+        };
+
         codefun = {
           serverName = "codefun.fyi";
           forceSSL = true;
