@@ -12,7 +12,6 @@
   
     certs = {
       "codefun.fyi" = {
-        # webroot = "/var/lib/acme/acme-challenge";
         extraDomainNames = [ "www.codefun.fyi" "blog.codefun.fyi" ];
         dnsProvider = "cloudflare";
         credentialsFile = "/home/deployer/cf/cloudf";
