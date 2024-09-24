@@ -78,7 +78,7 @@ in {
             root = "/var/lib/acme/acme-challenge";
           };
           "/" = {
-            return = "301 https://codefun.fyi$request_uri";
+            return = "301 https://codebrick.top$request_uri";
           };
         };
       };
