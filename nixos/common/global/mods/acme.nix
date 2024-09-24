@@ -15,7 +15,7 @@
 #########################################
 
       "codefun.fyi" = {
-        extraDomainNames = [ "www.codefun.fyi" "*.codefun.fyi" ];
+        extraDomainNames = [ "*.codefun.fyi" ];
         dnsProvider = "cloudflare";
         credentialsFile = "/home/deployer/cf/cloudf";
         webroot = null;
