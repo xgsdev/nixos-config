@@ -55,6 +55,7 @@
     nix-output-monitor
     nh # Nice wrapper for NixOS and HM
     timer
+    goaccess
   ];
 
   # Add stuff for your user as you see fit:

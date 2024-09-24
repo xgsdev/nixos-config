@@ -23,7 +23,7 @@ in {
       "network"
       "plugdev"
       "podman"
-      "video"
+      "nginx"
       "wheel"
       "wireshark"
     ];
