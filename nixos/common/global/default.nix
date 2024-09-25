@@ -4,8 +4,6 @@
     [
       # Import home-manager's NixOS module
       inputs.home-manager.nixosModules.home-manager
-      # ./acme.nix
-      # ./auto-upgrade.nix
       ./mods/locale.nix
       ./mods/base-cli.nix
       ./mods/nix.nix
@@ -16,6 +14,7 @@
       ./mods/nginx.nix
       # ./mods/podman.nix
       ./mods/systemd-initrd.nix
+      ./mods/auto-upgrade.nix
       # ./mods/tailscale.nix
     ];
 
