@@ -10,19 +10,31 @@ in {
       recommendedOptimisation = true;
       # clientMaxBodySize = "300m";
 
+      appendHttpConfig = ''
+        map $http_x_forwarded_for $real_client_ip {
+          ~^(\d+\.\d+\.\d+\.\d+) $1;
+          default $http_cf_connecting_ip;
+        }
+
+        log_format custom_log_format '$real_client_ip - $remote_user [$time_local] '
+                             '"$request" $status $body_bytes_sent '
+                             '"$http_host" "$upstream_response_time"'
+                             '"$http_referer" "$http_user_agent"';
+      '';
+
       virtualHosts = {
 
-        "_" = {
-          serverName = "_";
-          default = true;
-          forceSSL = true;
-          useACMEHost = "codefun.fyi";
-          root = "/srv/www/codefun.fyi/default";
+        # "_" = {
+        #   serverName = "_";
+        #   default = true;
+        #   forceSSL = true;
+        #   useACMEHost = "codefun.fyi";
+        #   root = "/srv/www/codefun.fyi/default";
 
-          locations."/.well-known/acme-challenge" = {
-            root = "/var/lib/acme/acme-challenge";
-          };
-        };
+        #   locations."/.well-known/acme-challenge" = {
+        #     root = "/var/lib/acme/acme-challenge";
+        #   };
+        # };
 
 ##########################################
         "codefun.fyi" = {
@@ -33,6 +45,11 @@ in {
           locations."/.well-known/acme-challenge" = {
             root = "/var/lib/acme/acme-challenge";
           };
+          extraConfig = ''
+          charset utf-8;
+          include  /home/deployer/goaccess/ban/allow-cloudflare-only.conf;
+          access_log /var/log/nginx/access.log custom_log_format;
+          '';
         };
 
       "www.codefun.fyi" = {
@@ -57,6 +74,11 @@ in {
         locations."/.well-known/acme-challenge" = {
           root = "/var/lib/acme/acme-challenge";
         };
+        extraConfig = ''
+          charset utf-8;
+          include  /home/deployer/goaccess/ban/allow-cloudflare-only.conf;
+          access_log /var/log/nginx/access.log custom_log_format;
+          '';
       };
 
       "codebrick.top" = {
@@ -67,6 +89,11 @@ in {
         locations."/.well-known/acme-challenge" = {
           root = "/var/lib/acme/acme-challenge";
         };
+        extraConfig = ''
+          charset utf-8;
+          include  /home/deployer/goaccess/ban/allow-cloudflare-only.conf;
+          access_log /var/log/nginx/access.log custom_log_format;
+          '';
       };
 
       "www.codebrick.top" = {
@@ -91,6 +118,11 @@ in {
         locations."/.well-known/acme-challenge" = {
           root = "/var/lib/acme/acme-challenge";
         };
+        extraConfig = ''
+          charset utf-8;
+          include  /home/deployer/goaccess/ban/allow-cloudflare-only.conf;
+          access_log /var/log/nginx/access.log custom_log_format;
+          '';
       };
 
 ##########################################
