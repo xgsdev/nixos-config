@@ -10,7 +10,7 @@ in {
       recommendedOptimisation = true;
       # clientMaxBodySize = "300m";
 
-      appendHttpConfig = ''
+      httpConfig = ''
         map $http_x_forwarded_for $real_client_ip {
           ~^(\d+\.\d+\.\d+\.\d+) $1;
           default $http_cf_connecting_ip;
