@@ -47,7 +47,7 @@ in {
           };
           extraConfig = ''
           charset utf-8;
-          include  /home/deployer/goaccess/ban/allow-cloudflare-only.conf;
+          include  /var/log/nginx/allow-cloudflare-only.conf;
           access_log /var/log/nginx/access.log custom_log_format;
           '';
         };
@@ -76,7 +76,7 @@ in {
         };
         extraConfig = ''
           charset utf-8;
-          include  /home/deployer/goaccess/ban/allow-cloudflare-only.conf;
+          include  /var/log/nginx/allow-cloudflare-only.conf;
           access_log /var/log/nginx/access.log custom_log_format;
           '';
       };
@@ -91,7 +91,7 @@ in {
         };
         extraConfig = ''
           charset utf-8;
-          include  /home/deployer/goaccess/ban/allow-cloudflare-only.conf;
+          include  /var/log/nginx/allow-cloudflare-only.conf;
           access_log /var/log/nginx/access.log custom_log_format;
           '';
       };
@@ -120,7 +120,7 @@ in {
         };
         extraConfig = ''
           charset utf-8;
-          include  /home/deployer/goaccess/ban/allow-cloudflare-only.conf;
+          include /var/log/nginx/allow-cloudflare-only.conf;
           access_log /var/log/nginx/access.log custom_log_format;
           '';
       };
